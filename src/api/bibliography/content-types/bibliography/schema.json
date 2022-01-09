@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bibliographies",
+  "info": {
+    "singularName": "bibliography",
+    "pluralName": "bibliographies",
+    "displayName": "Bibliography",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "link": {
+      "type": "string",
+      "regex": "http",
+      "required": true,
+      "unique": true
+    }
+  }
+}
