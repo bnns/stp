@@ -40,6 +40,12 @@
     "link": {
       "type": "string",
       "regex": "https"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "meetings"
     }
   }
 }
