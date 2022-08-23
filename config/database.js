@@ -13,5 +13,6 @@ module.exports = ({ env }) => ({
       },
     },
     debug: false,
+    acquireConnectionTImeout: 300000, // 5 minute timeout
   },
 });
