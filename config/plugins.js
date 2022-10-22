@@ -21,8 +21,8 @@ module.exports = ({ env }) => ({
         amazon: 'https://email.us-east-1.amazonaws.com',
       },
       settings: {
-        defaultFrom: 'SubsetOfTheoreticalPractice@gmail.com',
-        defaultReplyTo: 'SubsetOfTheoreticalPractice@gmail.com',
+        defaultFrom: env('EMAIL'),
+        defaultReplyTo: env('EMAIL')
       },
     },
   },
