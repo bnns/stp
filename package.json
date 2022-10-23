@@ -11,11 +11,11 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.1.8",
-    "@strapi/plugin-users-permissions": "4.1.8",
+    "@strapi/plugin-i18n": "4.1.10",
+    "@strapi/plugin-users-permissions": "4.1.10",
     "@strapi/provider-email-amazon-ses": "^4.4.5",
-    "@strapi/strapi": "4.1.8",
-    "pg": "^8.7.1",
+    "@strapi/strapi": "4.1.10",
+    "pg": "^8.8.0",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "5.1.1",
     "strapi-provider-upload-do": "^3.6.6"
