@@ -20,6 +20,12 @@
       "relation": "manyToMany",
       "target": "api::meeting.meeting",
       "inversedBy": "tags"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "tags"
     }
   }
 }
