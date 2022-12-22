@@ -58,6 +58,14 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "summary": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }
