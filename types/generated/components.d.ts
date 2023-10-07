@@ -5,10 +5,11 @@ export interface LinkReferences extends Schema.Component {
   info: {
     displayName: 'References';
     icon: 'link';
+    description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    link: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
   };
 }
 

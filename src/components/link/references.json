@@ -2,20 +2,21 @@
   "collectionName": "components_link_references",
   "info": {
     "displayName": "References",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "link": {
       "type": "string",
       "regex": "http",
       "required": true,
-      "unique": true
+      "unique": false
     }
   }
 }
