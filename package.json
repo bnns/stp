@@ -2,7 +2,7 @@
   "name": "stp-web",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "The backend for the STP website",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
@@ -20,7 +20,7 @@
     "strapi-provider-upload-do": "^3.6.6"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "bnns"
   },
   "strapi": {
     "uuid": "fbd0289e-868a-44c5-9dbd-f20b163873a8"
