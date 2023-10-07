@@ -840,6 +840,7 @@ export interface ApiLinkLink extends Schema.CollectionType {
     singularName: 'link';
     pluralName: 'links';
     displayName: 'Link';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -876,12 +877,12 @@ export interface ApiMeetingMeeting extends Schema.CollectionType {
     recording: Attribute.String;
     description: Attribute.Text;
     name: Attribute.String & Attribute.Required;
-    link: Attribute.String;
     tags: Attribute.Relation<
       'api::meeting.meeting',
       'manyToMany',
       'api::tag.tag'
     >;
+    references: Attribute.Component<'link.references', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -933,6 +934,31 @@ export interface ApiTagTag extends Schema.CollectionType {
   };
 }
 
+export interface ApiZoomZoom extends Schema.SingleType {
+  collectionName: 'zooms';
+  info: {
+    singularName: 'zoom';
+    pluralName: 'zooms';
+    displayName: 'Zoom';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    link: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.DefaultTo<'https://us02web.zoom.us/j/87056843362'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::zoom.zoom', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::zoom.zoom', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -955,6 +981,7 @@ declare module '@strapi/strapi' {
       'api::link.link': ApiLinkLink;
       'api::meeting.meeting': ApiMeetingMeeting;
       'api::tag.tag': ApiTagTag;
+      'api::zoom.zoom': ApiZoomZoom;
     }
   }
 }

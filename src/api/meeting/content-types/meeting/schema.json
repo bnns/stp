@@ -37,15 +37,16 @@
       "type": "string",
       "required": true
     },
-    "link": {
-      "type": "string",
-      "regex": "https"
-    },
     "tags": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "meetings"
+    },
+    "references": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.references"
     }
   }
 }

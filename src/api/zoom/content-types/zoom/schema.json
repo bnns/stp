@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "zooms",
+  "info": {
+    "singularName": "zoom",
+    "pluralName": "zooms",
+    "displayName": "Zoom"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "regex": "https",
+      "default": "https://us02web.zoom.us/j/87056843362",
+      "required": true,
+      "unique": true
+    }
+  }
+}
