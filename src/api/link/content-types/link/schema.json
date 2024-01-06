@@ -29,6 +29,21 @@
     },
     "description": {
       "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Text by member",
+        "Text that cites us",
+        "Art projects",
+        "Interview",
+        "Video",
+        "Events",
+        "Relevant websites",
+        "Influential texts",
+        "Courses and Seminars"
+      ],
+      "required": true
     }
   }
 }

@@ -851,6 +851,20 @@ export interface ApiLinkLink extends Schema.CollectionType {
     link: Attribute.String & Attribute.Required;
     tags: Attribute.Relation<'api::link.link', 'oneToMany', 'api::tag.tag'>;
     description: Attribute.Text;
+    category: Attribute.Enumeration<
+      [
+        'Text by member',
+        'Text that cites us',
+        'Art projects',
+        'Interview',
+        'Video',
+        'Events',
+        'Relevant websites',
+        'Influential texts',
+        'Courses and Seminars'
+      ]
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
