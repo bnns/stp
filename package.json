@@ -11,13 +11,17 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.14",
-    "@strapi/plugin-users-permissions": "4.14",
-    "@strapi/provider-email-amazon-ses": "^4.14",
-    "@strapi/strapi": "4.14",
+    "@strapi/plugin-i18n": "4.16.2",
+    "@strapi/plugin-users-permissions": "4.16.2",
+    "@strapi/provider-email-amazon-ses": "^4.16.2",
+    "@strapi/strapi": "4.16.2",
     "pg": "^8.8.0",
     "pg-connection-string": "^2.5.0",
-    "strapi-provider-upload-do": "^3.6.6"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.2.0",
+    "strapi-provider-upload-do": "^3.6.6",
+    "styled-components": "^5.2.1"
   },
   "author": {
     "name": "bnns"
