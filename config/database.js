@@ -13,6 +13,13 @@ module.exports = ({ env }) => ({
       },
     },
     debug: false,
-    acquireConnectionTImeout: 300000, // 5 minute timeout
+    acquireConnectionTimeout: 300000, // 5 minute timeout
+    pool: {
+      min: 2,
+      max: 10
+    }
   },
+  settings: {
+    forceMigration: false,
+  }
 });

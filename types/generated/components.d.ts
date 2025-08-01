@@ -1,21 +1,21 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface LinkReferences extends Schema.Component {
+export interface LinkReferences extends Struct.ComponentSchema {
   collectionName: 'components_link_references';
   info: {
+    description: '';
     displayName: 'References';
     icon: 'link';
-    description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'link.references': LinkReferences;
     }
   }
