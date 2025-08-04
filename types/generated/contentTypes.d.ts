@@ -575,6 +575,49 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTodoTodo extends Struct.CollectionTypeSchema {
+  collectionName: 'todos';
+  info: {
+    description: 'Todo items for Discord bot integration';
+    displayName: 'Todo';
+    pluralName: 'todos';
+    singularName: 'todo';
+  };
+  options: {
+    draftAndPublish: false;
+    preview: false;
+  };
+  attributes: {
+    completedAt: Schema.Attribute.DateTime;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+        minLength: 1;
+      }>;
+    dueDate: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::todo.todo'> &
+      Schema.Attribute.Private;
+    priority: Schema.Attribute.Enumeration<['low', 'medium', 'high']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'medium'>;
+    publishedAt: Schema.Attribute.DateTime;
+    todoStatus: Schema.Attribute.Enumeration<
+      ['pending', 'in_progress', 'completed', 'cancelled']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'pending'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.String;
+  };
+}
+
 export interface ApiZoomZoom extends Struct.SingleTypeSchema {
   collectionName: 'zooms';
   info: {
@@ -1118,6 +1161,7 @@ declare module '@strapi/strapi' {
       'api::link.link': ApiLinkLink;
       'api::meeting.meeting': ApiMeetingMeeting;
       'api::tag.tag': ApiTagTag;
+      'api::todo.todo': ApiTodoTodo;
       'api::zoom.zoom': ApiZoomZoom;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

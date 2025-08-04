@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "todos",
+  "info": {
+    "singularName": "todo",
+    "pluralName": "todos",
+    "displayName": "Todo",
+    "description": "Todo items for Discord bot integration"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "preview": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "dueDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "todoStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "required": true
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "required": true
+    },
+    "userId": {
+      "type": "string",
+      "required": false,
+      "description": "Discord user ID"
+    },
+    "completedAt": {
+      "type": "datetime",
+      "required": false,
+      "description": "Timestamp when todo was marked as completed"
+    }
+  }
+}
